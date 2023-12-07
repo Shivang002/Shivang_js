@@ -7,5 +7,5 @@ console.log("Shivang")
 
 // primitive
 // int , string,boolean, undefined ,null
-
+// null ka datatype object ata h
 //object
