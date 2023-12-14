@@ -60,12 +60,83 @@ const obj={
 
 
  //function with objects
- obj.func= function(){
-    console.log("hum yha function ka  use kar rhe h ");
- }
- obj.fun= function(){
-    console.log(`hum yha function ka  use kar rhe h, ${this.name} `);
- }
-console.log(obj.fun());
+//  obj.func= function(){
+//     console.log("hum yha function ka  use kar rhe h ");
+//  }
+//  obj.fun= function(){
+//     console.log(`hum yha function ka  use kar rhe h, ${this.name} `);
+//  }
+// console.log(obj.fun());
 
 
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++ OBJECT-2 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//constructor -> singleton
+//const tinder=new Object()
+
+const tinder={}
+
+tinder.id=1
+tinder.name="Shivang Pandey"
+tinder.isLogged=false
+
+//console.log(tinder);
+//output: { id: 1, name: 'Shivang Pandey', isLogged: false }
+
+
+//nested object
+const obc={
+   email:"shiva@gmail.som",
+   first:{
+        firstname:"Shivang",
+        lastname:"Pandey"
+   },
+   message:"nested loop"
+}
+// console.log(obc);
+//output:
+// {
+//    email: 'shiva@gmail.som',
+//    first: { firstname: 'Shivang', lastname: 'Pandey' },
+//    message: 'nested loop'
+//  }
+
+// loop ke andar ke values ko direct access karne e lia
+  // console.log(obc.first.firstname);
+
+//merging the two object
+const obj1={1:"asd",2:"ert"}
+const obj2={3:"qwe",4:"qsc"}
+
+//const obj3={obj1,obj2} //this will give same issue as the push operation in array
+
+//console.log(obj3);
+//output : { obj1: { '1': 'asd', '2': 'ert' }, obj2: { '3': 'qwe', '4': 'qsc' } }
+
+// const obj3= Object.assign(obj1,obj2)
+// console.log(obj3); //{ '1': 'asd', '2': 'ert', '3': 'qwe', '4': 'qsc' }
+
+//spread  operator ->Widely and Mostly used
+// const obj3={...obj1,...obj2}
+// console.log(obj3);
+//output :{ '1': 'asd', '2': 'ert', '3': 'qwe', '4': 'qsc' }
+
+//printing/using the keys of the object
+// console.log(Object.keys(tinder)); //will be in the form of array
+// console.log(Object.values(tinder));  //same for the values
+// //to avoid error it is better to ask the object whether iit contains the required properties
+// console.log(tinder.hasOwnProperty('isLogged')); //will return a boolean ans
+
+//DESTRUCTION
+const eg={
+   course:"js in Hindi",
+   price:99,
+   coach:"Hitesh"
+}
+//new way of acessing object attributes
+ const {coach : sir}=eg //another way of calling the attributes by giving shortname
+ console.log(sir);
+
+
+ //apna kaam dusre ke sir pe daal dena ->API yhi 
